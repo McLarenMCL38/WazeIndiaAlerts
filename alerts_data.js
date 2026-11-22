@@ -2,7 +2,7 @@ window.__WAZE_LIVE_DATA__ = {
   "updatedAtMillis": 1795344052885,
   "updatedAtIST": "22 Nov 2026, 04:10 PM IST",
   "feedEndTimeMillis": 1795344047949,
-  "isStale": false,
+  "isStale": true,
   "lastGoodAtMillis": 1795344052885,
   "lastGoodAtIST": "22 Nov 2026, 04:10 PM IST",
   "counts": {
@@ -1755167,5 +1755167,7 @@ window.__WAZE_LIVE_DATA__ = {
   ],
   "pingCountInWindow": 1,
   "batchTargetPings": 6,
-  "batchWindowMinutes": 30
+  "batchWindowMinutes": 30,
+  "lastCheckedAtMillis": 1795369814402,
+  "lastCheckedAtIST": "22 Nov 2026, 11:20 PM IST"
 };
