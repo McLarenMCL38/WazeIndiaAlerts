@@ -1,0 +1,22 @@
+window.__WAZE_LIVE_DATA__ = {
+  "updatedAtMillis": null,
+  "updatedAtIST": "Awaiting first 5-min GitHub Action sync",
+  "feedEndTimeMillis": null,
+  "isStale": false,
+  "lastGoodAtMillis": null,
+  "lastGoodAtIST": null,
+  "pingCountInWindow": 0,
+  "batchTargetPings": 6,
+  "batchWindowMinutes": 30,
+  "counts": {
+    "ALL": 0,
+    "ROAD_CLOSED": 0,
+    "ACCIDENT": 0,
+    "HAZARD": 0,
+    "JAM": 0,
+    "POLICE": 0
+  },
+  "cities": [],
+  "bbox": null,
+  "events": []
+};

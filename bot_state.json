@@ -1,0 +1,9 @@
+{
+  "window_started_at": 0,
+  "last_batch_sent_at": 0,
+  "total_fetches": 0,
+  "window_pings": [],
+  "recent_pings": [],
+  "alert_records": {},
+  "notified_uuids": {}
+}
