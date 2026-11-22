@@ -1,0 +1,61 @@
+name: Fetch Waze Alerts (5m) & Telegram Batch (30m)
+
+on:
+  schedule:
+    # Runs every 5 minutes (6 fetches per 30-minute Telegram batch window)
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      force_batch:
+        description: 'Force Telegram batch check now (requires at least 2 recorded pings)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: waze-alerts-poller
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch Waze feed, update webpage JSON, and evaluate 30-min Telegram batch
+        env:
+          WAZE_FEED_URL: ${{ secrets.WAZE_FEED_URL }}
+          WAZE_ROW_FEED_URL: ${{ secrets.WAZE_ROW_FEED_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_BATCH: ${{ inputs.force_batch || 'false' }}
+        run: python waze_alert_bot.py --once
+
+      - name: Commit and push updated live alerts & ping state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add alerts.json alerts_data.js data/bot_state.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(data): update live Waze alerts ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git pull --rebase --autostash
+            git push
+          fi
