@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waze India — Live Traffic, Hazards & Road Alerts</title>
+  <title>Waze India — Compiled Regional &amp; City Traffic Alerts</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -34,7 +34,7 @@
     }
 
     #sidebar {
-      width: 440px;
+      width: 455px;
       max-width: 100vw;
       height: 100%;
       background: #ffffff;
@@ -46,7 +46,7 @@
     }
 
     .header {
-      padding: 16px 20px;
+      padding: 15px 18px;
       background: #0f172a;
       color: #ffffff;
       border-bottom: 2px solid #33ccff;
@@ -57,34 +57,34 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .brand-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .waze-logo-badge {
       background: #33ccff;
       color: #0f172a;
       font-weight: 900;
-      font-size: 15px;
-      padding: 5px 10px;
+      font-size: 14px;
+      padding: 5px 9px;
       border-radius: 6px;
       letter-spacing: -0.5px;
     }
 
     .brand-title {
-      font-size: 16.5px;
+      font-size: 16px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.2px;
     }
 
     .brand-sub {
-      font-size: 11.5px;
+      font-size: 11px;
       color: #94a3b8;
     }
 
@@ -112,7 +112,7 @@
       align-items: center;
       justify-content: space-between;
       margin-top: 8px;
-      padding-top: 8px;
+      padding-top: 7px;
       border-top: 1px solid #1e293b;
       font-size: 11.5px;
       color: #cbd5e1;
@@ -153,41 +153,61 @@
     }
 
     .sync-meta-bar {
-      margin-top: 6px;
-      font-size: 11px;
+      margin-top: 5px;
+      font-size: 10.5px;
       color: #94a3b8;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 6px;
+    }
+
+    .compile-summary-strip {
+      background: #ecfeff;
+      border-bottom: 1px solid #bae6fd;
+      padding: 7px 18px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #0369a1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
     }
 
     .filter-panel {
-      padding: 14px 20px;
+      padding: 12px 18px;
       background: #f8fafc;
       border-bottom: 1px solid #e2e8f0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
+    }
+
+    .filter-row-two {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 8px;
     }
 
     .filter-group {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
     }
 
     .filter-label {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       color: #475569;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
 
     .custom-select {
       width: 100%;
-      padding: 9px 12px;
-      font-size: 13px;
+      padding: 8px 10px;
+      font-size: 12.5px;
       font-weight: 600;
       color: #0f172a;
       background-color: #ffffff;
@@ -210,8 +230,8 @@
 
     .search-box {
       width: 100%;
-      padding: 9px 12px;
-      font-size: 13px;
+      padding: 8px 11px;
+      font-size: 12.5px;
       color: #0f172a;
       background-color: #ffffff;
       border: 1.5px solid #cbd5e1;
@@ -227,10 +247,10 @@
     }
 
     .list-header {
-      padding: 10px 20px;
+      padding: 9px 18px;
       background: #e2e8f0;
       color: #334155;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       display: flex;
       justify-content: space-between;
@@ -250,22 +270,41 @@
     .alerts-container {
       flex: 1;
       overflow-y: auto;
-      padding: 14px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
       background: #f8fafc;
+    }
+
+    .hub-group-banner {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 6px 11px;
+      border-radius: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .hub-group-banner span.sub {
+      color: #38bdf8;
+      font-size: 10.5px;
+      font-weight: 600;
     }
 
     .alert-card {
       background: #ffffff;
       border: 1.5px solid #e2e8f0;
       border-radius: 10px;
-      padding: 13px;
+      padding: 12px;
       cursor: pointer;
       transition: all 0.18s ease;
       display: flex;
-      gap: 12px;
+      gap: 11px;
       position: relative;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
@@ -277,13 +316,13 @@
     }
 
     .card-icon-box {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 19px;
       flex-shrink: 0;
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
@@ -298,12 +337,12 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       gap: 6px;
     }
 
     .card-title {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #0f172a;
       line-height: 1.3;
@@ -311,9 +350,9 @@
     }
 
     .badge-type {
-      padding: 3px 8px;
+      padding: 2.5px 7px;
       border-radius: 6px;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.03em;
@@ -322,26 +361,39 @@
     }
 
     .card-city {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       color: #0284c7;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .compiled-pill {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 5px;
     }
 
     .card-desc {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #475569;
-      line-height: 1.4;
-      margin-bottom: 8px;
+      line-height: 1.38;
+      margin-bottom: 7px;
     }
 
     .card-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
+      font-size: 10.5px;
       color: #64748b;
-      padding-top: 6px;
+      padding-top: 5px;
       border-top: 1px dashed #e2e8f0;
       gap: 6px;
     }
@@ -351,27 +403,39 @@
       color: #1e293b;
     }
 
+    .load-more-btn {
+      width: 100%;
+      padding: 10px;
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .load-more-btn:hover {
+      background: #1e293b;
+    }
+
     .waze-marker-pin {
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
       border-radius: 50% 50% 50% 0;
       transform: rotate(-45deg);
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2.5px solid #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      border: 2px solid #ffffff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
       cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-
-    .waze-marker-pin:hover {
-      transform: rotate(-45deg) scale(1.15);
     }
 
     .waze-marker-icon-inner {
       transform: rotate(45deg);
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1;
     }
 
@@ -390,7 +454,7 @@
 
     .popup-box {
       padding: 10px;
-      min-width: 245px;
+      min-width: 250px;
       font-family: inherit;
     }
 
@@ -461,17 +525,9 @@
       color: #ffffff !important;
     }
 
-    .btn-waze-livemap:hover {
-      background: #1e293b;
-    }
-
     .btn-waze-app {
       background: #33ccff;
       color: #0f172a !important;
-    }
-
-    .btn-waze-app:hover {
-      background: #00bfff;
     }
 
     @media (max-width: 768px) {
@@ -480,10 +536,10 @@
       }
       #sidebar {
         width: 100%;
-        height: 52vh;
+        height: 55vh;
       }
       #map {
-        height: 48vh;
+        height: 45vh;
       }
     }
   </style>
@@ -496,8 +552,8 @@
         <div class="brand-left">
           <div class="waze-logo-badge">WAZE</div>
           <div>
-            <div class="brand-title">India Live Traffic &amp; Alerts</div>
-            <div class="brand-sub">Waze Partnership Hub &bull; ROW WorldTiles</div>
+            <div class="brand-title">India Compiled Traffic Digest</div>
+            <div class="brand-sub">Grouped by Region &amp; Nearest Major City Hub</div>
           </div>
         </div>
         <button class="sync-btn" onclick="fetchLiveAlerts(true)" title="Refresh alerts from server">↻ Sync</button>
@@ -512,38 +568,61 @@
       </div>
 
       <div class="sync-meta-bar">
-        <span id="last-updated-label">Last feed sync: --</span>
-        <span id="batch-window-label">5m GitHub Action</span>
+        <span id="last-updated-label">Synced: --</span>
+        <span id="batch-window-label">30m Regional Digest</span>
       </div>
     </div>
 
+    <div class="compile-summary-strip" id="compile-summary-strip">
+      <span>✨ Deduplicating segments &amp; hiding barricades...</span>
+    </div>
+
     <div class="filter-panel">
+      <!-- Region + Nearest Major City Hub Row -->
+      <div class="filter-row-two">
+        <div class="filter-group">
+          <label class="filter-label" for="region-select">1. Region / Zone</label>
+          <select id="region-select" class="custom-select" onchange="onRegionChange()">
+            <option value="ALL">All Regions</option>
+            <option value="North India">North India</option>
+            <option value="West India">West India</option>
+            <option value="South India">South India</option>
+            <option value="East India">East India</option>
+            <option value="Central India">Central India</option>
+            <option value="Northeast India">Northeast India</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="city-select">2. Nearest Major City</label>
+          <select id="city-select" class="custom-select" onchange="onHubChange()">
+            <option value="ALL">All Major Hubs</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Report Type / Horizon Dropdown -->
       <div class="filter-group">
-        <label class="filter-label" for="report-type-select">Filter By Alert Type</label>
-        <select id="report-type-select" class="custom-select" onchange="applyFilters(false)">
-          <option value="ALL">Show All Active Reports (0)</option>
-          <option value="ROAD_CLOSED">⛔ Road Closures (0)</option>
-          <option value="HAZARD">⚠️ Hazards &amp; Construction (0)</option>
-          <option value="ACCIDENT">💥 Accidents (0)</option>
-          <option value="JAM">🚗 Heavy Traffic &amp; Jams (0)</option>
-          <option value="POLICE">👮 Police &amp; Speed Traps (0)</option>
+        <label class="filter-label" for="report-type-select">3. Incident Category</label>
+        <select id="report-type-select" class="custom-select" onchange="resetAndApplyFilters(false)">
+          <option value="LIVE_SHORT_TERM">⚡ Live Short-Term Incidents Only (Recommended)</option>
+          <option value="ALL">📋 Show All Compiled Reports (incl. Construction)</option>
+          <option value="ACCIDENT">💥 Accidents</option>
+          <option value="ROAD_CLOSED">⛔ All Road Closures</option>
+          <option value="LONG_TERM_CONSTRUCTION">🏗️ Long-Term Construction Stretches</option>
+          <option value="HAZARD">⚠️ Hazards &amp; Potholes</option>
+          <option value="JAM">🚗 Standstill Traffic Corridors</option>
+          <option value="POLICE">👮 Police</option>
         </select>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label" for="city-select">Filter By City / Area</label>
-        <select id="city-select" class="custom-select" onchange="applyFilters(true)">
-          <option value="ALL">All Active Cities</option>
-        </select>
-      </div>
-
-      <div class="filter-group">
-        <input type="text" id="search-box" class="search-box" placeholder="🔍 Search street, city, or keyword..." oninput="applyFilters(false)">
+        <input type="text" id="search-box" class="search-box" placeholder="🔍 Search highway (NH-48), street, city, or keyword..." oninput="resetAndApplyFilters(false)">
       </div>
     </div>
 
     <div class="list-header">
-      <span id="list-label">All Active Reports</span>
+      <span id="list-label">Compiled Incidents</span>
       <span class="badge-count" id="active-count">0</span>
     </div>
 
@@ -552,16 +631,13 @@
 
   <main id="map"></main>
 
-  <!-- Optional local script fallback when opened directly via file:// -->
-  <script src="./alerts_data.js"></script>
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <script>
-    // 1. Initialize Leaflet Map Centered on India
-    const map = L.map('map', { zoomControl: true }).setView([20.5937, 78.9629], 5);
+    const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([21.1458, 79.0882], 5);
 
-    // 2. Official Waze WorldTiles Server: https://worldtiles{1-4}.waze.com/tiles/{z}/{x}/{y}.png
+    // Official Waze WorldTiles Server: https://worldtiles{1-4}.waze.com/tiles/{z}/{x}/{y}.png
     L.tileLayer('https://worldtiles{s}.waze.com/tiles/{z}/{x}/{y}.png', {
       subdomains: ['1', '2', '3', '4'],
       minZoom: 3,
@@ -570,11 +646,9 @@
       attribution: '&copy; <a href="https://www.waze.com/livemap" target="_blank" rel="noopener">Waze</a> &bull; Partnership Hub'
     }).addTo(map);
 
-    // Separate polyline and marker layers so markers always draw on top of jam lines
     const polylinesLayer = L.layerGroup().addTo(map);
     const markersLayer = L.layerGroup().addTo(map);
 
-    // Waze jam polyline style specification (waze-map skill)
     const JAM_LINE_STYLE = {
       0: { color: '#4CAF50', weight: 3.5, opacity: 0.65 },
       1: { color: '#8BC34A', weight: 5, opacity: 0.9 },
@@ -607,7 +681,7 @@
         textDark: "#991b1b"
       },
       JAM: {
-        label: "Traffic Jam",
+        label: "Standstill Jam",
         icon: "🚗",
         color: "#ea580c",
         bgLight: "#ffedd5",
@@ -622,20 +696,27 @@
       }
     };
 
-    const CITY_COORDINATES = {
-      "Bengaluru": [12.9716, 77.5946, 12],
-      "Mumbai": [19.0760, 72.8777, 12],
-      "Delhi NCR": [28.6139, 77.2090, 12],
-      "New Delhi": [28.6139, 77.2090, 12],
-      "Chennai": [13.0827, 80.2707, 12],
-      "Hyderabad": [17.3850, 78.4867, 12],
-      "Pune": [18.5204, 73.8567, 12],
-      "Kolkata": [22.5726, 88.3639, 12]
+    const REGION_VIEWS = {
+      "ALL": [21.1458, 79.0882, 5],
+      "North India": [28.7041, 77.1025, 6],
+      "West India": [20.5000, 73.5000, 6],
+      "South India": [13.0827, 77.5946, 6],
+      "East India": [23.0000, 86.5000, 6],
+      "Central India": [22.9734, 78.6569, 6],
+      "Northeast India": [26.1445, 91.7362, 7]
     };
 
+    const PAGE_SIZE = 120;
+    let visibleCardLimit = PAGE_SIZE;
     let liveEvents = [];
-    let lastFingerprint = "";
-    let hasInitialViewportFit = false;
+    let currentFiltered = [];
+    let lastUpdatedMillis = 0;
+
+    // Restore saved user location preferences
+    try {
+      const savedReg = localStorage.getItem('waze_india_region');
+      if (savedReg) document.getElementById('region-select').value = savedReg;
+    } catch (_) {}
 
     function escapeHtml(str) {
       return String(str ?? '')
@@ -651,7 +732,7 @@
       const diffSec = Math.max(0, Math.floor((Date.now() - Number(pubMillis)) / 1000));
       if (diffSec < 60) return "Just now";
       const mins = Math.floor(diffSec / 60);
-      if (mins < 60) return `${mins} min${mins === 1 ? '' : 's'} ago`;
+      if (mins < 60) return `${mins}m ago`;
       const hrs = Math.floor(mins / 60);
       const remMins = mins % 60;
       if (hrs < 24) return remMins > 0 ? `${hrs}h ${remMins}m ago` : `${hrs}h ago`;
@@ -669,69 +750,94 @@
       }) + " IST";
     }
 
-    function createPinIcon(cfg) {
-      return L.divIcon({
-        className: 'custom-div-icon',
-        html: `
-          <div class="waze-marker-pin" style="background: ${cfg.color};">
-            <span class="waze-marker-icon-inner">${cfg.icon}</span>
-          </div>
-        `,
-        iconSize: [38, 38],
-        iconAnchor: [19, 38],
-        popupAnchor: [0, -36]
+    const pinIconCache = {};
+    function getPinIcon(type) {
+      if (!pinIconCache[type]) {
+        const cfg = CATEGORIES[type] || CATEGORIES.HAZARD;
+        pinIconCache[type] = L.divIcon({
+          className: 'custom-div-icon',
+          html: `<div class="waze-marker-pin" style="background:${cfg.color};"><span class="waze-marker-icon-inner">${cfg.icon}</span></div>`,
+          iconSize: [34, 34],
+          iconAnchor: [17, 34],
+          popupAnchor: [0, -32]
+        });
+      }
+      return pinIconCache[type];
+    }
+
+    function rebuildDropdowns(payload) {
+      const regSelect = document.getElementById('region-select');
+      const selectedReg = regSelect.value || 'ALL';
+      const regCounts = payload?.regionCounts || {};
+
+      Array.from(regSelect.options).forEach(opt => {
+        if (opt.value === 'ALL') {
+          opt.textContent = `All India (${liveEvents.length})`;
+        } else {
+          const c = regCounts[opt.value] ?? liveEvents.filter(e => e.region === opt.value).length;
+          opt.textContent = `${opt.value.replace(' India', '')} (${c})`;
+        }
       });
-    }
 
-    function computeFingerprint(payload) {
-      if (!payload || !Array.isArray(payload.events)) return "";
-      const evSig = payload.events
-        .map(e => `${e.id}:${e.pubMillis || 0}:${e.occurrenceCount || 1}`)
-        .join('|');
-      return `${payload.isStale ? 'stale' : 'live'}::${payload.pingCountInWindow || 0}::${evSig}`;
-    }
+      // Filter hubs to the chosen region so the city dropdown is focused & relevant
+      const citySelect = document.getElementById('city-select');
+      let prevHub = citySelect.value || 'ALL';
+      try {
+        if (!citySelect.dataset.initialized) {
+          const savedHub = localStorage.getItem('waze_india_hub');
+          if (savedHub) prevHub = savedHub;
+          citySelect.dataset.initialized = '1';
+        }
+      } catch (_) {}
 
-    function updateDropdownControls(payload) {
-      const counts = payload.counts || {};
+      const hubMap = new Map();
+      liveEvents.forEach(ev => {
+        if (selectedReg !== 'ALL' && ev.region !== selectedReg) return;
+        const h = ev.hubCity || ev.city;
+        if (h && h !== 'India') hubMap.set(h, (hubMap.get(h) || 0) + 1);
+      });
+
+      const sortedHubs = Array.from(hubMap.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+      const totalInReg = selectedReg === 'ALL'
+        ? liveEvents.length
+        : liveEvents.filter(e => e.region === selectedReg).length;
+
+      citySelect.innerHTML = `<option value="ALL">All Major Hubs (${totalInReg})</option>`;
+      sortedHubs.forEach(([hub, count]) => {
+        const opt = document.createElement('option');
+        opt.value = hub;
+        opt.textContent = `${hub} (${count})`;
+        citySelect.appendChild(opt);
+      });
+      citySelect.value = (prevHub !== 'ALL' && hubMap.has(prevHub)) ? prevHub : 'ALL';
+
+      // Update Category counts scoped to current Region + Hub
+      const activeHub = citySelect.value;
+      const scoped = liveEvents.filter(e =>
+        (selectedReg === 'ALL' || e.region === selectedReg) &&
+        (activeHub === 'ALL' || e.hubCity === activeHub)
+      );
+
+      const cLive = scoped.filter(e => !e.isLongTerm).length;
+      const cLong = scoped.filter(e => e.isLongTerm).length;
+      const cByType = t => scoped.filter(e => e.type === t).length;
+
       const typeSelect = document.getElementById('report-type-select');
-      const prevType = typeSelect.value || 'ALL';
-
+      const prevType = typeSelect.value || 'LIVE_SHORT_TERM';
       const labels = {
-        ALL: `Show All Active Reports (${counts.ALL ?? liveEvents.length})`,
-        ROAD_CLOSED: `⛔ Road Closures (${counts.ROAD_CLOSED ?? 0})`,
-        HAZARD: `⚠️ Hazards & Construction (${counts.HAZARD ?? 0})`,
-        ACCIDENT: `💥 Accidents (${counts.ACCIDENT ?? 0})`,
-        JAM: `🚗 Heavy Traffic & Jams (${counts.JAM ?? 0})`,
-        POLICE: `👮 Police & Speed Traps (${counts.POLICE ?? 0})`
+        LIVE_SHORT_TERM: `⚡ Live Short-Term Incidents Only (${cLive})`,
+        ALL: `📋 All Compiled Reports (${scoped.length})`,
+        ACCIDENT: `💥 Accidents (${cByType('ACCIDENT')})`,
+        ROAD_CLOSED: `⛔ All Road Closures (${cByType('ROAD_CLOSED')})`,
+        LONG_TERM_CONSTRUCTION: `🏗️ Long-Term Construction Stretches (${cLong})`,
+        HAZARD: `⚠️ Hazards & Potholes (${cByType('HAZARD')})`,
+        JAM: `🚗 Standstill Traffic Corridors (${cByType('JAM')})`,
+        POLICE: `👮 Police (${cByType('POLICE')})`
       };
-
       Array.from(typeSelect.options).forEach(opt => {
         if (labels[opt.value]) opt.textContent = labels[opt.value];
       });
       typeSelect.value = prevType;
-
-      // Rebuild dynamic city filter while preserving active selection
-      const citySelect = document.getElementById('city-select');
-      const prevCity = citySelect.value || 'ALL';
-      const cityMap = new Map();
-      liveEvents.forEach(ev => {
-        if (ev.city) cityMap.set(ev.city, (cityMap.get(ev.city) || 0) + 1);
-      });
-
-      const sortedCities = Array.from(cityMap.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-      citySelect.innerHTML = `<option value="ALL">All Active Cities (${liveEvents.length})</option>`;
-      sortedCities.forEach(([city, count]) => {
-        const opt = document.createElement('option');
-        opt.value = city;
-        opt.textContent = `${city} (${count})`;
-        citySelect.appendChild(opt);
-      });
-
-      if (prevCity !== 'ALL' && cityMap.has(prevCity)) {
-        citySelect.value = prevCity;
-      } else {
-        citySelect.value = 'ALL';
-      }
     }
 
     function updateHeaderStatus(payload, fetchFailed = false) {
@@ -740,6 +846,7 @@
       const statusText = document.getElementById('feed-status-text');
       const updatedLabel = document.getElementById('last-updated-label');
       const batchLabel = document.getElementById('batch-window-label');
+      const strip = document.getElementById('compile-summary-strip');
 
       const stale = Boolean(fetchFailed || (payload && payload.isStale));
       const lastGoodMs = payload?.lastGoodAtMillis || payload?.updatedAtMillis;
@@ -751,26 +858,32 @@
       } else {
         indicator.classList.remove('stale');
         dot.classList.remove('stale');
-        statusText.textContent = `Live Waze Feed (${liveEvents.length} active)`;
+        statusText.textContent = `Live Compiled Feed (${liveEvents.length.toLocaleString()} incidents)`;
       }
 
       if (payload?.updatedAtMillis) {
         updatedLabel.textContent = `Synced: ${formatShortIST(payload.updatedAtMillis)}`;
       }
       if (payload?.pingCountInWindow && payload?.batchTargetPings) {
-        batchLabel.textContent = `Telegram Batch: Ping ${payload.pingCountInWindow}/${payload.batchTargetPings} (30m)`;
+        batchLabel.textContent = `Telegram Digest: Ping ${payload.pingCountInWindow}/${payload.batchTargetPings} (30m)`;
+      }
+
+      const st = payload?.compilationStats;
+      if (st && strip) {
+        strip.innerHTML = `
+          <span>✨ <b>${st.compiledEvents}</b> compiled from <b>${st.rawEventsAfterBarricadeFilter + st.removedBarricades}</b> raw reports</span>
+          <span>🚫 <b>${st.removedBarricades}</b> barricades removed</span>
+        `;
       }
     }
 
-    function buildPopupHtml(alert, cfg) {
+    function buildPopupHtml(alert) {
+      const cfg = CATEGORIES[alert.type] || CATEGORIES.HAZARD;
       const lat = Number(alert.lat);
       const lon = Number(alert.lon);
       const liveMapUrl = `https://www.waze.com/live-map/directions?to=ll.${lat}%2C${lon}`;
       const appUrl = `https://waze.com/ul?ll=${lat},${lon}&navigate=yes`;
-      const cityLine = alert.country && alert.country !== 'IN'
-        ? `${escapeHtml(alert.city)} (${escapeHtml(alert.country)})`
-        : escapeHtml(alert.city);
-      const pings = Number(alert.occurrenceCount || 1);
+      const segs = Number(alert.segmentCount || 1);
 
       return `
         <div class="popup-box">
@@ -778,10 +891,10 @@
             ${cfg.icon} ${escapeHtml(alert.subtypeLabel || cfg.label)}
           </span>
           <div class="popup-street">${escapeHtml(alert.street)}</div>
-          <div class="popup-location">📍 ${cityLine}</div>
+          <div class="popup-location">📍 ${escapeHtml(alert.city)} &bull; ${escapeHtml(alert.region || '')}</div>
           <div class="popup-description">${escapeHtml(alert.desc)}</div>
           <div class="popup-wazer-info">
-            <span>🔁 <b>${pings}</b> ping${pings === 1 ? '' : 's'}</span>
+            <span>🔗 <b>${segs}</b> segment${segs === 1 ? '' : 's'}</span>
             <span>👍 <b>${Number(alert.thumbsUp || 0)}</b> • 🕒 ${escapeHtml(formatRelativeTime(alert.pubMillis))}</span>
           </div>
           <div class="popup-actions">
@@ -792,84 +905,74 @@
       `;
     }
 
-    function applyFilters(flyOnCityChange = false) {
-      const selectedType = document.getElementById('report-type-select').value;
-      const selectedCity = document.getElementById('city-select').value;
-      const searchKeyword = document.getElementById('search-box').value.trim().toLowerCase();
-
+    function renderMapLayers() {
       polylinesLayer.clearLayers();
       markersLayer.clearLayers();
+
+      currentFiltered.forEach(ev => {
+        const lvl = ev.type === 'ROAD_CLOSED' ? 5 : Math.max(0, Math.min(5, Number(ev.jamLevel || 3)));
+        const style = JAM_LINE_STYLE[lvl] || JAM_LINE_STYLE[3];
+
+        if (Array.isArray(ev.multiCoordinates) && ev.multiCoordinates.length > 0) {
+          ev.multiCoordinates.forEach(line => {
+            if (line.length >= 2) {
+              polylinesLayer.addLayer(
+                L.polyline(line, style).bindPopup(() => buildPopupHtml(ev))
+              );
+            }
+          });
+        } else if (Array.isArray(ev.coordinates) && ev.coordinates.length >= 2) {
+          polylinesLayer.addLayer(
+            L.polyline(ev.coordinates, style).bindPopup(() => buildPopupHtml(ev))
+          );
+        }
+      });
+
+      const zoom = map.getZoom();
+      const bounds = map.getBounds();
+      const pinsToDraw = (zoom >= 8)
+        ? currentFiltered.filter(e => bounds.contains([e.lat, e.lon])).slice(0, 500)
+        : currentFiltered.slice(0, 400);
+
+      pinsToDraw.forEach(alert => {
+        const marker = L.marker([alert.lat, alert.lon], { icon: getPinIcon(alert.type) })
+          .bindPopup(() => buildPopupHtml(alert));
+        markersLayer.addLayer(marker);
+      });
+    }
+
+    function renderSidebarCards() {
       const container = document.getElementById('alerts-container');
       container.innerHTML = '';
 
-      const filtered = liveEvents.filter(alert => {
-        const matchesType = (selectedType === "ALL") || (alert.type === selectedType);
-        const matchesCity = (selectedCity === "ALL") || (alert.city === selectedCity);
-        const matchesSearch = !searchKeyword ||
-          (alert.street || '').toLowerCase().includes(searchKeyword) ||
-          (alert.city || '').toLowerCase().includes(searchKeyword) ||
-          (alert.desc || '').toLowerCase().includes(searchKeyword) ||
-          (alert.subtypeLabel || '').toLowerCase().includes(searchKeyword);
-        return matchesType && matchesCity && matchesSearch;
-      });
-
-      document.getElementById('active-count').textContent = `${filtered.length}`;
-      document.getElementById('list-label').textContent = selectedType === "ALL"
-        ? "All Active Reports"
-        : `${CATEGORIES[selectedType]?.label || selectedType} Reports`;
-
-      if (filtered.length === 0) {
+      if (currentFiltered.length === 0) {
         container.innerHTML = `
-          <div style="text-align: center; padding: 40px 20px; color: #64748b; font-size: 13.5px;">
-            <div style="font-size: 28px; margin-bottom: 8px;">🛣️</div>
-            <strong>${liveEvents.length === 0 ? 'Waiting for live Waze alerts' : 'No matching reports found'}</strong><br>
-            ${liveEvents.length === 0
-              ? 'Scheduled GitHub Action fetches the Waze Partner Feed every 5 minutes.'
-              : 'Try choosing another alert type, city, or search term.'}
+          <div style="text-align: center; padding: 40px 20px; color: #64748b; font-size: 13px;">
+            <div style="font-size: 28px; margin-bottom: 8px;">✅</div>
+            <strong>No matching alerts in this view</strong><br>
+            Switch Category to "All Compiled Reports" or choose another City Hub / Region.
           </div>
         `;
         return;
       }
 
-      // Draw jam & closure polylines ascending by jamLevel first so severe segments draw on top
-      const withLines = filtered
-        .filter(e => Array.isArray(e.coordinates) && e.coordinates.length >= 2)
-        .slice()
-        .sort((a, b) => (a.jamLevel || 0) - (b.jamLevel || 0));
+      const slice = currentFiltered.slice(0, visibleCardLimit);
+      const frag = document.createDocumentFragment();
+      let lastHubHeader = "";
 
-      const polyByEventId = new Map();
-      withLines.forEach(ev => {
-        const lvl = ev.type === 'ROAD_CLOSED' ? 5 : Math.max(0, Math.min(5, Number(ev.jamLevel || 3)));
-        const style = JAM_LINE_STYLE[lvl] || JAM_LINE_STYLE[3];
-        const cfg = CATEGORIES[ev.type] || CATEGORIES.JAM;
-        const poly = L.polyline(ev.coordinates, {
-          color: style.color,
-          weight: style.weight,
-          opacity: style.opacity,
-          lineCap: 'round',
-          lineJoin: 'round'
-        }).bindPopup(buildPopupHtml(ev, cfg));
-        polylinesLayer.addLayer(poly);
-        polyByEventId.set(ev.id, poly);
-      });
-
-      // Draw alert pin markers & sidebar cards
-      filtered.forEach(alert => {
-        const cfg = CATEGORIES[alert.type] || CATEGORIES.HAZARD;
-        const popupHtml = buildPopupHtml(alert, cfg);
-        let targetLayer = polyByEventId.get(alert.id) || null;
-
-        // Place pin marker for point alerts (and closures), avoiding cluttered pins on routine speed jams
-        if (alert.entityKind === 'alert' || alert.type === 'ROAD_CLOSED') {
-          const marker = L.marker([alert.lat, alert.lon], { icon: createPinIcon(cfg) }).bindPopup(popupHtml);
-          markersLayer.addLayer(marker);
-          targetLayer = marker;
+      slice.forEach(alert => {
+        const hubTitle = `${alert.hubCity || alert.city} • ${alert.region || 'India'}`;
+        if (hubTitle !== lastHubHeader) {
+          lastHubHeader = hubTitle;
+          const totalInHub = currentFiltered.filter(x => `${x.hubCity || x.city} • ${x.region || 'India'}` === hubTitle).length;
+          const banner = document.createElement('div');
+          banner.className = 'hub-group-banner';
+          banner.innerHTML = `<span>🏙 ${escapeHtml(alert.hubCity || alert.city)} Hub</span><span class="sub">${escapeHtml(alert.region || '')} • ${totalInHub} alert${totalInHub === 1 ? '' : 's'}</span>`;
+          frag.appendChild(banner);
         }
 
-        const cityBadge = alert.country && alert.country !== 'IN'
-          ? `${escapeHtml(alert.city)} (${escapeHtml(alert.country)})`
-          : escapeHtml(alert.city);
-        const pings = Number(alert.occurrenceCount || 1);
+        const cfg = CATEGORIES[alert.type] || CATEGORIES.HAZARD;
+        const segs = Number(alert.segmentCount || 1);
 
         const card = document.createElement('div');
         card.className = 'alert-card';
@@ -884,70 +987,143 @@
                 ${escapeHtml(alert.subtypeLabel || cfg.label)}
               </span>
             </div>
-            <div class="card-city">📍 ${cityBadge}</div>
+            <div class="card-city">
+              <span>📍 ${escapeHtml(alert.city)}</span>
+              ${segs > 1 ? `<span class="compiled-pill">🔗 ${segs} reports merged</span>` : ''}
+            </div>
             <div class="card-desc">${escapeHtml(alert.desc)}</div>
             <div class="card-meta">
-              <span class="wazer-community">🔁 ${pings} ping${pings === 1 ? '' : 's'}${alert.thumbsUp ? ` &bull; 👍 ${Number(alert.thumbsUp)}` : ''}</span>
+              <span class="wazer-community">${alert.isLongTerm ? '🏗️ Long-term stretch' : '⚡ Live incident'}${alert.thumbsUp ? ` &bull; 👍 ${Number(alert.thumbsUp)}` : ''}</span>
               <span>🕒 ${escapeHtml(formatRelativeTime(alert.pubMillis))}</span>
             </div>
           </div>
         `;
 
         card.onclick = () => {
-          if (Array.isArray(alert.coordinates) && alert.coordinates.length >= 2 && alert.entityKind !== 'alert') {
-            map.flyToBounds(alert.coordinates, { padding: [60, 60], maxZoom: 16, duration: 1.0 });
-          } else {
-            map.flyTo([alert.lat, alert.lon], 15, { duration: 1.0 });
-          }
-          if (targetLayer) {
-            setTimeout(() => targetLayer.openPopup(), 1050);
-          }
+          map.flyTo([alert.lat, alert.lon], 14, { duration: 0.9 });
+          setTimeout(() => {
+            L.popup()
+              .setLatLng([alert.lat, alert.lon])
+              .setContent(buildPopupHtml(alert))
+              .openOn(map);
+          }, 950);
         };
 
-        container.appendChild(card);
+        frag.appendChild(card);
       });
 
-      if (flyOnCityChange) {
-        if (selectedCity === "ALL") {
-          fitToEventsBounds(liveEvents);
-        } else if (CITY_COORDINATES[selectedCity]) {
-          const [cLat, cLon, cZoom] = CITY_COORDINATES[selectedCity];
-          map.flyTo([cLat, cLon], cZoom, { duration: 1.0 });
-        } else {
-          fitToEventsBounds(filtered);
-        }
+      if (currentFiltered.length > visibleCardLimit) {
+        const moreBtn = document.createElement('button');
+        moreBtn.className = 'load-more-btn';
+        const rem = currentFiltered.length - visibleCardLimit;
+        moreBtn.textContent = `Show More Compiled Reports (${rem.toLocaleString()} remaining)`;
+        moreBtn.onclick = () => {
+          visibleCardLimit += PAGE_SIZE;
+          renderSidebarCards();
+        };
+        frag.appendChild(moreBtn);
       }
+
+      container.appendChild(frag);
     }
 
-    function fitToEventsBounds(eventsList) {
-      if (!eventsList || eventsList.length === 0) return;
-      const pts = eventsList
-        .filter(e => typeof e.lat === 'number' && typeof e.lon === 'number')
-        .map(e => [e.lat, e.lon]);
-      if (pts.length === 0) return;
-      if (pts.length === 1) {
-        map.setView(pts[0], 14);
-      } else {
-        map.fitBounds(pts, { padding: [45, 45], maxZoom: 14 });
-      }
+    function onRegionChange() {
+      const reg = document.getElementById('region-select').value;
+      document.getElementById('city-select').value = 'ALL';
+      try {
+        localStorage.setItem('waze_india_region', reg);
+        localStorage.setItem('waze_india_hub', 'ALL');
+      } catch (_) {}
+      rebuildDropdowns(window.__LAST_PAYLOAD__ || {});
+      visibleCardLimit = PAGE_SIZE;
+      applyFilters(true);
     }
+
+    function onHubChange() {
+      const hub = document.getElementById('city-select').value;
+      try { localStorage.setItem('waze_india_hub', hub); } catch (_) {}
+      rebuildDropdowns(window.__LAST_PAYLOAD__ || {});
+      visibleCardLimit = PAGE_SIZE;
+      applyFilters(true);
+    }
+
+    function resetAndApplyFilters(flyToArea = false) {
+      visibleCardLimit = PAGE_SIZE;
+      applyFilters(flyToArea);
+    }
+
+    function applyFilters(flyToArea = false) {
+      const selectedReg = document.getElementById('region-select').value;
+      const selectedHub = document.getElementById('city-select').value;
+      const selectedType = document.getElementById('report-type-select').value;
+      const searchKeyword = document.getElementById('search-box').value.trim().toLowerCase();
+
+      currentFiltered = liveEvents.filter(alert => {
+        const matchesReg = (selectedReg === "ALL") || (alert.region === selectedReg);
+        const matchesHub = (selectedHub === "ALL") || (alert.hubCity === selectedHub);
+
+        let matchesType = true;
+        if (selectedType === "LIVE_SHORT_TERM") matchesType = !alert.isLongTerm;
+        else if (selectedType === "LONG_TERM_CONSTRUCTION") matchesType = Boolean(alert.isLongTerm);
+        else if (selectedType !== "ALL") matchesType = (alert.type === selectedType);
+
+        const matchesSearch = !searchKeyword ||
+          (alert.street || '').toLowerCase().includes(searchKeyword) ||
+          (alert.city || '').toLowerCase().includes(searchKeyword) ||
+          (alert.hubCity || '').toLowerCase().includes(searchKeyword) ||
+          (alert.desc || '').toLowerCase().includes(searchKeyword) ||
+          (alert.subtypeLabel || '').toLowerCase().includes(searchKeyword);
+
+        return matchesReg && matchesHub && matchesType && matchesSearch;
+      });
+
+      // Group cards cleanly by Hub City -> Priority -> Recency when browsing a region
+      currentFiltered.sort((a, b) => {
+        if (selectedHub === "ALL" && a.hubCity !== b.hubCity) {
+          return (a.hubCity || '').localeCompare(b.hubCity || '');
+        }
+        return (b.pubMillis || 0) - (a.pubMillis || 0);
+      });
+
+      document.getElementById('active-count').textContent = currentFiltered.length.toLocaleString();
+      const scopeName = selectedHub !== 'ALL' ? `${selectedHub} Hub` : (selectedReg !== 'ALL' ? selectedReg : 'India');
+      document.getElementById('list-label').textContent = `${scopeName} — Compiled Reports`;
+
+      if (flyToArea) {
+        if (selectedHub !== "ALL" && currentFiltered.length > 0) {
+          const pts = currentFiltered.map(e => [e.lat, e.lon]);
+          if (pts.length === 1) map.flyTo(pts[0], 13, { duration: 0.9 });
+          else map.flyToBounds(pts, { padding: [50, 50], maxZoom: 12, duration: 0.9 });
+        } else if (REGION_VIEWS[selectedReg]) {
+          const [rLat, rLon, rZoom] = REGION_VIEWS[selectedReg];
+          map.flyTo([rLat, rLon], rZoom, { duration: 0.9 });
+        }
+      }
+
+      renderMapLayers();
+      renderSidebarCards();
+    }
+
+    map.on('moveend', () => {
+      if (map.getZoom() >= 8 && currentFiltered.length > 0) {
+        renderMapLayers();
+      }
+    });
 
     function ingestPayload(payload, forceRender = false) {
       if (!payload || !Array.isArray(payload.events)) return;
-      const fp = computeFingerprint(payload);
+      window.__LAST_PAYLOAD__ = payload;
       liveEvents = payload.events;
       updateHeaderStatus(payload, false);
 
-      if (fp !== lastFingerprint || forceRender) {
-        lastFingerprint = fp;
-        updateDropdownControls(payload);
-        applyFilters(false);
-
-        // Fit viewport ONLY on the first load so users never lose pan/zoom on 60s refreshes
-        if (!hasInitialViewportFit && liveEvents.length > 0) {
-          hasInitialViewportFit = true;
-          fitToEventsBounds(liveEvents);
-        }
+      if (payload.updatedAtMillis !== lastUpdatedMillis || forceRender) {
+        const isFirstLoad = (lastUpdatedMillis === 0);
+        lastUpdatedMillis = payload.updatedAtMillis || Date.now();
+        rebuildDropdowns(payload);
+        applyFilters(isFirstLoad && (
+          document.getElementById('region-select').value !== 'ALL' ||
+          document.getElementById('city-select').value !== 'ALL'
+        ));
       }
     }
 
@@ -958,13 +1134,8 @@
         const payload = await resp.json();
         ingestPayload(payload, manual);
       } catch (err) {
-        // Fallback to local alerts_data.js when opened via file://, else keep last good data
-        if (liveEvents.length === 0 && window.__WAZE_LIVE_DATA__) {
-          ingestPayload(window.__WAZE_LIVE_DATA__, true);
-        } else {
-          updateHeaderStatus({ updatedAtMillis: null, lastGoodAtMillis: null, isStale: true }, true);
-          if (liveEvents.length === 0) applyFilters(false);
-        }
+        updateHeaderStatus({ updatedAtMillis: lastUpdatedMillis, lastGoodAtMillis: lastUpdatedMillis, isStale: true }, true);
+        if (liveEvents.length === 0) applyFilters(false);
       }
     }
 
@@ -983,7 +1154,6 @@
     setInterval(updateISTClock, 1000);
     updateISTClock();
 
-    // Poll alerts.json every 60 seconds in browser; GitHub Action refreshes alerts.json every 5 minutes
     fetchLiveAlerts(true);
     setInterval(() => fetchLiveAlerts(false), 60000);
   </script>
